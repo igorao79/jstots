@@ -213,7 +213,7 @@ export default function Home() {
                     setFiles([]);
                     setConvertedFiles([]);
                   }}
-                  className="text-sm text-white/40 hover:text-red-400 transition-colors"
+                  className="text-sm text-white/40 hover:text-red-400 transition-colors cursor-pointer"
                 >
                   Очистить все
                 </button>
@@ -237,7 +237,7 @@ export default function Home() {
                         e.stopPropagation();
                         removeFile(i);
                       }}
-                      className="text-white/40 hover:text-red-400 transition-colors"
+                      className="text-white/40 hover:text-red-400 transition-colors cursor-pointer"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -345,7 +345,7 @@ export default function Home() {
                     <div className="flex items-center gap-1">
                       <button
                         onClick={() => copyToClipboard(file.content, i)}
-                        className="text-white/40 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/5"
+                        className="text-white/40 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/5 cursor-pointer"
                         title="Копировать"
                       >
                         {copiedIndex === i ? (
@@ -356,7 +356,7 @@ export default function Home() {
                       </button>
                       <button
                         onClick={() => downloadFile(file)}
-                        className="text-white/40 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/5"
+                        className="text-white/40 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/5 cursor-pointer"
                         title="Скачать"
                       >
                         <Download className="w-4 h-4" />
