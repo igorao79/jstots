@@ -162,7 +162,7 @@ export default function Home() {
             <ShimmerText
               as="p"
               className="text-base"
-              speed={0.5}
+              speed={6}
               baseColor="rgba(163,163,163,0.6)"
               shimmerColor="rgba(255,255,255,0.9)"
             >
