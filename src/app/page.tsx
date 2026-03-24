@@ -279,7 +279,7 @@ export default function Home() {
                 loading={loading}
                 onClick={convert}
                 disabled={loading}
-                className="bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                className="bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.3)] cursor-pointer"
                 rightIcon={
                   !loading ? <ArrowRight className="w-5 h-5" /> : undefined
                 }
