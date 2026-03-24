@@ -151,19 +151,19 @@ export default function Home() {
         <StaticNoise />
       </div>
       <div className="relative z-10 h-screen flex items-center justify-center px-4">
-        <div className="bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl w-full max-w-2xl">
+        <div className="bg-white/5 backdrop-blur-2xl border border-white/15 rounded-3xl p-8 shadow-[0_8px_64px_rgba(0,0,0,0.4)] w-full max-w-2xl">
           {/* Header */}
           <div className="text-center mb-6 fade-in">
             <h1 className="text-5xl font-bold mb-3">
-              <span className="text-yellow-400">JS</span>
+              <span className="text-yellow-400 animate-pulse-slow drop-shadow-[0_0_8px_rgba(250,204,21,0.3)]">JS</span>
               <span className="text-white/50 mx-3">→</span>
-              <span className="text-blue-400">TS</span>
+              <span className="text-blue-400 animate-pulse-slow-delay drop-shadow-[0_0_8px_rgba(96,165,250,0.3)]">TS</span>
             </h1>
             <ShimmerText
               as="p"
               className="text-base"
-              baseColor="rgba(163,163,163,0.6)"
-              shimmerColor="rgba(255,255,255,0.9)"
+              baseColor="rgba(163,163,163,0.4)"
+              shimmerColor="rgba(255,255,255,0.6)"
             >
               AI-конвертер JavaScript в TypeScript на базе Llama 3.3 70B
             </ShimmerText>
@@ -273,12 +273,13 @@ export default function Home() {
           {files.length > 0 && (
             <div className="flex justify-center mb-4 fade-in">
               <Button
-                variant="glow"
+                variant="default"
                 size="lg"
                 pill
                 loading={loading}
                 onClick={convert}
                 disabled={loading}
+                className="bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                 rightIcon={
                   !loading ? <ArrowRight className="w-5 h-5" /> : undefined
                 }
