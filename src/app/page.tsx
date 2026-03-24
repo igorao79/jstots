@@ -162,8 +162,9 @@ export default function Home() {
             <ShimmerText
               as="p"
               className="text-base"
-              baseColor="rgba(163,163,163,0.4)"
-              shimmerColor="rgba(255,255,255,0.6)"
+              speed={0.5}
+              baseColor="rgba(163,163,163,0.6)"
+              shimmerColor="rgba(255,255,255,0.9)"
             >
               AI-конвертер JavaScript в TypeScript на базе Llama 3.3 70B
             </ShimmerText>
