@@ -63,6 +63,7 @@ Rules:
 - Add proper type annotations to all variables, function parameters, and return types
 - Replace \`any\` with specific types where possible
 - Add interfaces/types for objects and props
+- When a variable's type can change at runtime (e.g. array modified by splice with different types), use union types like \`(string | number)[]\` instead of a single type
 - Convert .js imports to .ts, .jsx to .tsx
 - Preserve all logic, comments, and formatting
 - Use modern TypeScript features
@@ -145,6 +146,7 @@ Rules:
 - Use shared interfaces/types identified in the analysis
 - Ensure type compatibility across files
 - Replace \`any\` with specific types where possible
+- When a variable's type can change at runtime (e.g. array modified by splice with different types), use union types like \`(string | number)[]\` instead of a single type
 - Convert .js imports to .ts, .jsx to .tsx
 - Preserve all logic, comments, and formatting
 - Use modern TypeScript features
