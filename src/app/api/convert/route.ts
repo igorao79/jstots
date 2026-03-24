@@ -77,7 +77,21 @@ Rules:
     max_tokens: 8192,
   });
 
-  return response.choices[0]?.message?.content?.trim() ?? "";
+  return stripMarkdown(response.choices[0]?.message?.content?.trim() ?? "");
+}
+
+function stripMarkdown(code: string): string {
+  // Remove ```typescript ... ``` or ```ts ... ``` or ``` ... ``` wrappers
+  const fenceRegex = /^```(?:typescript|ts|tsx|javascript|js|jsx)?\s*\n?([\s\S]*?)\n?\s*```$/;
+  const match = code.match(fenceRegex);
+  if (match) return match[1].trim();
+  // Also handle if it starts with ``` but doesn't end properly
+  if (code.startsWith("```")) {
+    const firstNewline = code.indexOf("\n");
+    const stripped = firstNewline !== -1 ? code.slice(firstNewline + 1) : code;
+    return stripped.replace(/\n?```\s*$/, "").trim();
+  }
+  return code;
 }
 
 async function convertProjectFiles(files: FileData[]): Promise<FileData[]> {
@@ -147,7 +161,7 @@ Rules:
 
       return {
         name: file.name.replace(/\.js$/, ".ts").replace(/\.jsx$/, ".tsx"),
-        content: response.choices[0]?.message?.content?.trim() ?? "",
+        content: stripMarkdown(response.choices[0]?.message?.content?.trim() ?? ""),
       };
     })
   );
