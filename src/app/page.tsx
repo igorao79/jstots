@@ -303,20 +303,10 @@ export default function Home() {
             </div>
           )}
 
-          {/* Loading state */}
-          {loading && (
-            <div className="text-center text-white/50 fade-in">
-              <Loader2 className="w-8 h-8 spinner mx-auto mb-3 text-blue-400" />
-              {projectMode && files.length >= 2 ? (
-                <>
-                  <p className="font-medium">Анализ контекста проекта...</p>
-                  <p className="text-sm mt-1">
-                    ИИ изучает зависимости между {files.length} файлами
-                  </p>
-                </>
-              ) : (
-                <p className="font-medium">Конвертация...</p>
-              )}
+          {/* Loading state — only for project mode context analysis */}
+          {loading && projectMode && files.length >= 2 && (
+            <div className="text-center text-white/50 text-sm fade-in">
+              <p>Анализ контекста между {files.length} файлами...</p>
             </div>
           )}
 
